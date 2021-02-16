@@ -27,6 +27,7 @@ public class LiferayConfigurationReader extends ConfigurationReader {
     private static final String ID_LIFERAY_PROTOCOL = "liferayProtocol";
     private static final String ID_AUTH_TOKEN = "p_auth";
     private static final String ID_PROXY_PREFIX = "proxy_prefix";
+    private static final String ID_LIFERAY_VERSION = "liferay_version";
 
     private static final String DEFAULT_USER = "user";
     private static final String DEFAULT_PASSWORD = "pass";
@@ -40,6 +41,7 @@ public class LiferayConfigurationReader extends ConfigurationReader {
     private static final String DEFAULT_LIFERAY_PROTOCOL_PATH = "http";
     private static final String DEFAULT_AUTH_TOKEN = "";
     private static final String DEFAULT_PROXY_PREFIX = "";
+    private static final String DEFAULT_LIFERAY_VERSION = "6.2-ce-ga6";
 
     private static LiferayConfigurationReader instance;
 
@@ -59,6 +61,7 @@ public class LiferayConfigurationReader extends ConfigurationReader {
         addProperty(ID_LIFERAY_PROTOCOL, DEFAULT_LIFERAY_PROTOCOL_PATH);
         addProperty(ID_AUTH_TOKEN, DEFAULT_AUTH_TOKEN);
         addProperty(ID_PROXY_PREFIX, DEFAULT_PROXY_PREFIX);
+        addProperty(ID_LIFERAY_VERSION, DEFAULT_LIFERAY_VERSION);
 
         addPropertiesSource(new PropertiesSourceFile(CONFIG_FILE));
         addPropertiesSource(new SystemVariablePropertiesSourceFile(LIFERAY_SYSTEM_VARIABLE_CONFIG, CONFIG_FILE));
@@ -151,5 +154,9 @@ public class LiferayConfigurationReader extends ConfigurationReader {
 
     public String getProxyPrefix() {
         return getPropertyLogException(ID_PROXY_PREFIX);
+    }
+
+    public String getLiferayVersion() {
+        return getPropertyLogException(ID_LIFERAY_VERSION);
     }
 }
