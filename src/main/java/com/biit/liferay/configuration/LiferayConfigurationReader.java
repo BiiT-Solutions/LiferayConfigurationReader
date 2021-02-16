@@ -21,8 +21,9 @@ public class LiferayConfigurationReader extends ConfigurationReader {
     private static final String ID_SITE = "site";
     private static final String ID_WEBAPP = "webapp";
     private static final String ID_PORT = "port";
-    private static final String ID_PASSWORD_ALGORITHM = "passwordEncriptationAlgorithm";
+    private static final String ID_PASSWORD_ALGORITHM = "passwordEncryptionAlgorithm";
     private static final String ID_WEBSERVICES_PATH = "webservices";
+    private static final String ID_CUSTOM_WEBSERVICES_PATH = "custom_webservices";
     private static final String ID_LIFERAY_PROTOCOL = "liferayProtocol";
     private static final String ID_AUTH_TOKEN = "p_auth";
     private static final String ID_PROXY_PREFIX = "proxy_prefix";
@@ -54,6 +55,7 @@ public class LiferayConfigurationReader extends ConfigurationReader {
         addProperty(ID_PORT, DEFAULT_PORT);
         addProperty(ID_PASSWORD_ALGORITHM, DEFAULT_PASSWORD_ALGORITHM);
         addProperty(ID_WEBSERVICES_PATH, DEFAULT_WEBSERVICES_PATH);
+        addProperty(ID_CUSTOM_WEBSERVICES_PATH, null);
         addProperty(ID_LIFERAY_PROTOCOL, DEFAULT_LIFERAY_PROTOCOL_PATH);
         addProperty(ID_AUTH_TOKEN, DEFAULT_AUTH_TOKEN);
         addProperty(ID_PROXY_PREFIX, DEFAULT_PROXY_PREFIX);
@@ -137,6 +139,14 @@ public class LiferayConfigurationReader extends ConfigurationReader {
 
     public String getWebServicesPath() {
         return getPropertyLogException(ID_WEBSERVICES_PATH);
+    }
+
+    public String getCustomWebServicesPath() {
+        String customWebservicesPath = getPropertyLogException(ID_CUSTOM_WEBSERVICES_PATH);
+        if (customWebservicesPath == null) {
+            return getWebServicesPath();
+        }
+        return customWebservicesPath;
     }
 
     public String getProxyPrefix() {
