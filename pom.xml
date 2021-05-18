@@ -22,8 +22,8 @@
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:git.biit-solutions.com:LiferayConfigurationReader.git</connection>
-		<developerConnection>scm:git:git.biit-solutions.com:LiferayConfigurationReader.git</developerConnection>
+		<connection>scm:git:git.biit-solutions.com:BiiT/LiferayConfigurationReader.git</connection>
+		<connection>scm:git:git.biit-solutions.com:BiiT/LiferayConfigurationReader.git</developerConnection>
 		<tag>liferay-configuration-reader-1.0.0</tag>
 	</scm>
 
