@@ -4,7 +4,7 @@
 	<groupId>com.biit.liferay</groupId>
 	<artifactId>liferay-configuration-reader</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.5-SNAPSHOT</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<name>Liferay Configuration Reader</name>
 	<description>Basic functionality for reading common configuration for Liferay</description>
 
@@ -38,7 +38,7 @@
 		<maven-scm-provider-gitexe.version>1.9.2</maven-scm-provider-gitexe.version>
 		<project.scm.id>git</project.scm.id>
 		<!-- BiiT dependencies -->
-		<common-utils.version>[1.0, 2.0)</common-utils.version>
+		<common-utils.version>[1.1, 1.2)</common-utils.version>
 	</properties>
 
 	<dependencies>

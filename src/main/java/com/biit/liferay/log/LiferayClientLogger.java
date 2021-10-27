@@ -1,13 +1,14 @@
 package com.biit.liferay.log;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import org.apache.log4j.Logger;
-
 public class LiferayClientLogger {
-	private static final Logger logger = Logger.getLogger(LiferayClientLogger.class);
+	private static final Logger logger = LoggerFactory.getLogger(LiferayClientLogger.class);
 
 	private LiferayClientLogger() {
 	}
@@ -42,7 +43,7 @@ public class LiferayClientLogger {
 	}
 
 	private static void fatal(String message) {
-		logger.fatal(message);
+		logger.error(message);
 	}
 
 	public static void fatal(String className, String message) {
