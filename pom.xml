@@ -8,6 +8,13 @@
 	<name>Liferay Configuration Reader</name>
 	<description>Basic functionality for reading common configuration for Liferay</description>
 
+	<parent>
+		<groupId>com.biit</groupId>
+		<artifactId>versions</artifactId>
+		<version>[0.1,0.2)</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
 	<distributionManagement>
 		<repository>
 			<id>central</id>
@@ -27,25 +34,10 @@
 		<tag>liferay-configuration-reader-1.0.0</tag>
 	</scm>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.jdk.version>1.6</java.jdk.version>
-		<plugin.compiler.version>2.3.2</plugin.compiler.version>
-		<plugin.exec.version>1.2.1</plugin.exec.version>
-		<org.testng.version>6.8</org.testng.version>
-		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
-		<maven-release-plugin.version>2.5.1</maven-release-plugin.version>
-		<maven-scm-provider-gitexe.version>1.9.2</maven-scm-provider-gitexe.version>
-		<project.scm.id>git</project.scm.id>
-		<!-- BiiT dependencies -->
-		<common-utils.version>[1.1, 1.2)</common-utils.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.biit</groupId>
 			<artifactId>common-utils</artifactId>
-			<version>${common-utils.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -54,10 +46,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${plugin.compiler.version}</version>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>7</source>
-					<target>7</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
